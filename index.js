@@ -44,3 +44,50 @@ return product.type === 'vegetable'
 
 console.log(latestProduct)
 
+//Choosing When to Filter?
+var post = { id: 4, title: 'New Post' };
+
+var comments = [
+  { postId: 4, content: 'awesome post' },
+  { postId: 3, content: 'it was okay' },
+  { postId: 4, content: 'neat'}
+]
+
+function commentsForPost (post, comments) {
+  return comments.filter(function (comment) {
+    return comment.postId === post.id;
+  })
+}
+
+console.log(commentsForPost(post, comments))
+
+//Coding Challenge 1 - Filtering Values
+
+//Filter the array of numbers using the filter helper, creating a new array that contains only numbers greater than 50
+
+var numbers = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+
+var filteredNumbers = numbers.filter((number) => {
+  return number > 50
+})
+
+console.log(filteredNumbers)
+
+//Coding Challenge 2 - Handling Permissions with Filter
+
+//Filter the array of users, only returning users with admin access
+
+var users = [
+ { id: 1, admin: true },  
+ { id: 2, admin: false },
+ { id: 3, admin: false },
+ { id: 4, admin: false },
+ { id: 5, admin: true },
+];
+
+var filteredUsers = users.filter((user) => {
+  return user.admin === true;
+})
+
+console.log(filteredUsers)
+
