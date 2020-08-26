@@ -91,3 +91,19 @@ var filteredUsers = users.filter((user) => {
 
 console.log(filteredUsers)
 
+//Challenge 3 - Implementing a Rejection
+
+function reject(array, iteratorFunction) {
+  return array.filter(x => {
+    return !iteratorFunction(x)
+  })
+}
+
+var numbers2 = [10, 20, 30, 60, 80]
+
+var lessThanFifteen = reject(numbers2, function(number) {
+  return number > 15
+})
+
+console.log(lessThanFifteen)
+
